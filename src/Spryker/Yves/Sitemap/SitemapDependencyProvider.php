@@ -36,11 +36,6 @@ class SitemapDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const SERVICE_FLYSYSTEM = 'SERVICE_FLYSYSTEM';
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -52,11 +47,6 @@ class SitemapDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addStoreClient(Container $container): Container
     {
         $container->set(static::CLIENT_STORE, function (Container $container): SitemapToStoreClientInterface {
@@ -66,11 +56,6 @@ class SitemapDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addFileSystemService(Container $container): Container
     {
         $container->set(static::SERVICE_FILE_SYSTEM, function (Container $container): SitemapToFileSystemServiceInterface {
@@ -82,11 +67,6 @@ class SitemapDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addFlysystemService(Container $container): Container
     {
         $container->set(static::SERVICE_FLYSYSTEM, function (Container $container): SitemapToFlysystemServiceInterface {

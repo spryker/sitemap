@@ -22,34 +22,16 @@ class SitemapToFlysystemServiceBridge implements SitemapToFlysystemServiceInterf
         $this->flysystemService = $flysystemService;
     }
 
-    /**
-     * @param string $filesystemName
-     * @param string $path
-     *
-     * @return mixed
-     */
     public function readStream(string $filesystemName, string $path): mixed
     {
         return $this->flysystemService->readStream($filesystemName, $path);
     }
 
-    /**
-     * @param string $filesystemName
-     * @param string $path
-     *
-     * @return int|null
-     */
     public function getTimestamp(string $filesystemName, string $path): ?int
     {
         return $this->flysystemService->getTimestamp($filesystemName, $path);
     }
 
-    /**
-     * @param string $filesystemName
-     * @param string $path
-     *
-     * @return bool
-     */
     public function has(string $filesystemName, string $path): bool
     {
         return $this->flysystemService->has($filesystemName, $path);

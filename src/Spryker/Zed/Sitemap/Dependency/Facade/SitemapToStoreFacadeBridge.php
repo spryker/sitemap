@@ -30,9 +30,6 @@ class SitemapToStoreFacadeBridge implements SitemapToStoreFacadeInterface
         return $this->storeFacade->getAllStores();
     }
 
-    /**
-     * @return bool
-     */
     public function isDynamicStoreEnabled(): bool
     {
         return $this->storeFacade->isDynamicStoreEnabled();

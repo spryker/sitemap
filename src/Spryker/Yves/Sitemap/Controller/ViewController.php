@@ -43,12 +43,6 @@ class ViewController extends AbstractController
      */
     protected const SITEMAP_FILE_NOT_FOUND_MESSAGE = 'Sitemap not found.';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param string $sitemapFileName
-     *
-     * @return \Symfony\Component\HttpFoundation\StreamedResponse
-     */
     public function indexAction(Request $request, string $sitemapFileName): StreamedResponse
     {
         $storeName = $this->getFactory()

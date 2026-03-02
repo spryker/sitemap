@@ -22,9 +22,6 @@ use Spryker\Yves\Sitemap\Writer\SitemapWriterInterface;
  */
 class SitemapFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Yves\Sitemap\Reader\SitemapReaderInterface
-     */
     public function createSitemapReader(): SitemapReaderInterface
     {
         return new SitemapReader(
@@ -33,9 +30,6 @@ class SitemapFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Yves\Sitemap\Reader\SitemapReaderInterface
-     */
     public function createSitemapCacheReader(): SitemapReaderInterface
     {
         return new SitemapCacheReader(
@@ -44,9 +38,6 @@ class SitemapFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Yves\Sitemap\Writer\SitemapWriterInterface
-     */
     public function createSitemapWriter(): SitemapWriterInterface
     {
         return new SitemapWriter(
@@ -55,25 +46,16 @@ class SitemapFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Yves\Sitemap\Dependency\Client\SitemapToStoreClientInterface
-     */
     public function getStoreClient(): SitemapToStoreClientInterface
     {
         return $this->getProvidedDependency(SitemapDependencyProvider::CLIENT_STORE);
     }
 
-    /**
-     * @return \Spryker\Yves\Sitemap\Dependency\Service\SitemapToFileSystemServiceInterface
-     */
     public function getFileSystemService(): SitemapToFileSystemServiceInterface
     {
         return $this->getProvidedDependency(SitemapDependencyProvider::SERVICE_FILE_SYSTEM);
     }
 
-    /**
-     * @return \Spryker\Yves\Sitemap\Dependency\Service\SitemapToFlysystemServiceInterface
-     */
     public function getFlysystemService(): SitemapToFlysystemServiceInterface
     {
         return $this->getProvidedDependency(SitemapDependencyProvider::SERVICE_FLYSYSTEM);

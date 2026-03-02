@@ -26,11 +26,6 @@ class SitemapToFileSystemServiceBridge implements SitemapToFileSystemServiceInte
         $this->fileSystemService = $fileSystemService;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileSystemContentTransfer $fileSystemContentTransfer
-     *
-     * @return void
-     */
     public function write(FileSystemContentTransfer $fileSystemContentTransfer): void
     {
         $this->fileSystemService->write($fileSystemContentTransfer);
@@ -46,11 +41,6 @@ class SitemapToFileSystemServiceBridge implements SitemapToFileSystemServiceInte
         return $this->fileSystemService->listContents($fileSystemListTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileSystemDeleteTransfer $fileSystemDeleteTransfer
-     *
-     * @return void
-     */
     public function delete(FileSystemDeleteTransfer $fileSystemDeleteTransfer): void
     {
         $this->fileSystemService->delete($fileSystemDeleteTransfer);

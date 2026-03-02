@@ -13,11 +13,6 @@ use Generated\Shared\Transfer\FileSystemListTransfer;
 
 interface SitemapToFileSystemServiceInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\FileSystemContentTransfer $fileSystemContentTransfer
-     *
-     * @return void
-     */
     public function write(FileSystemContentTransfer $fileSystemContentTransfer): void;
 
     /**
@@ -27,10 +22,5 @@ interface SitemapToFileSystemServiceInterface
      */
     public function listContents(FileSystemListTransfer $fileSystemListTransfer): array;
 
-    /**
-     * @param \Generated\Shared\Transfer\FileSystemDeleteTransfer $fileSystemDeleteTransfer
-     *
-     * @return void
-     */
     public function delete(FileSystemDeleteTransfer $fileSystemDeleteTransfer): void;
 }

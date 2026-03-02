@@ -9,27 +9,9 @@ namespace Spryker\Yves\Sitemap\Dependency\Service;
 
 interface SitemapToFlysystemServiceInterface
 {
-    /**
-     * @param string $filesystemName
-     * @param string $path
-     *
-     * @return mixed
-     */
     public function readStream(string $filesystemName, string $path): mixed;
 
-    /**
-     * @param string $filesystemName
-     * @param string $path
-     *
-     * @return int|null
-     */
     public function getTimestamp(string $filesystemName, string $path): ?int;
 
-    /**
-     * @param string $filesystemName
-     * @param string $path
-     *
-     * @return bool
-     */
     public function has(string $filesystemName, string $path): bool;
 }

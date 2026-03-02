@@ -14,8 +14,5 @@ interface SitemapToStoreFacadeInterface
      */
     public function getAllStores(): array;
 
-    /**
-     * @return bool
-     */
     public function isDynamicStoreEnabled(): bool;
 }

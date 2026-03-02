@@ -34,11 +34,6 @@ class SitemapDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const PLUGINS_SITEMAP_GENERATOR_DATA_PROVIDER = 'PLUGINS_SITEMAP_GENERATOR_DATA_PROVIDER';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -50,11 +45,6 @@ class SitemapDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addFileSystemService(Container $container): Container
     {
         $container->set(static::SERVICE_FILE_SYSTEM, function (Container $container): SitemapToFileSystemServiceInterface {
@@ -66,11 +56,6 @@ class SitemapDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreFacade(Container $container): Container
     {
         $container->set(static::FACADE_STORE, function (Container $container): SitemapToStoreFacadeInterface {
@@ -82,11 +67,6 @@ class SitemapDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSitemapGeneratorDataProviderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SITEMAP_GENERATOR_DATA_PROVIDER, function (): array {

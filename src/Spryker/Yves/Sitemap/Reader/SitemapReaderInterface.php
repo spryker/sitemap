@@ -9,11 +9,5 @@ namespace Spryker\Yves\Sitemap\Reader;
 
 interface SitemapReaderInterface
 {
-    /**
-     * @param string $sitemapFileName
-     * @param string $storeName
-     *
-     * @return mixed
-     */
     public function readStream(string $sitemapFileName, string $storeName): mixed;
 }

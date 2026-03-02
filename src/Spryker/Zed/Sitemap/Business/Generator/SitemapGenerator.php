@@ -53,9 +53,6 @@ class SitemapGenerator implements SitemapGeneratorInterface
         $this->disableInstancePooling();
     }
 
-    /**
-     * @return void
-     */
     public function generateSitemapFiles(): void
     {
         $storeTransfers = $this->storeFacade->getAllStores();
@@ -153,12 +150,6 @@ class SitemapGenerator implements SitemapGeneratorInterface
         return $fileName;
     }
 
-    /**
-     * @param string $entityType
-     * @param int $pageNumber
-     *
-     * @return string
-     */
     protected function generateSitemapFileName(string $entityType, int $pageNumber): string
     {
         return sprintf(
@@ -186,13 +177,6 @@ class SitemapGenerator implements SitemapGeneratorInterface
         return $sitemapUrlTransfersGroupedByIdEntity;
     }
 
-    /**
-     * @param string $fileName
-     * @param string $content
-     * @param string $storeName
-     *
-     * @return void
-     */
     protected function writeFile(string $fileName, string $content, string $storeName): void
     {
         $fileSystemContentTransfer = (new FileSystemContentTransfer())
@@ -218,11 +202,6 @@ class SitemapGenerator implements SitemapGeneratorInterface
         return $this->fileSystemService->listContents($fileSystemListTransfer);
     }
 
-    /**
-     * @param string $path
-     *
-     * @return void
-     */
     protected function deleteFile(string $path): void
     {
         $fileSystemDeleteTransfer = (new FileSystemDeleteTransfer())
@@ -232,11 +211,6 @@ class SitemapGenerator implements SitemapGeneratorInterface
         $this->fileSystemService->delete($fileSystemDeleteTransfer);
     }
 
-    /**
-     * @param string $storeName
-     *
-     * @return string
-     */
     protected function getBaseUrl(string $storeName): string
     {
         if ($this->storeFacade->isDynamicStoreEnabled() === false) {
@@ -250,11 +224,6 @@ class SitemapGenerator implements SitemapGeneratorInterface
         return $this->generateBaseUrl($yvesHost);
     }
 
-    /**
-     * @param string $yvesHost
-     *
-     * @return string
-     */
     protected function generateBaseUrl(string $yvesHost): string
     {
         return sprintf(

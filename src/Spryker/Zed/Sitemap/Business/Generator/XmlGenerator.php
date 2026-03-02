@@ -100,9 +100,6 @@ class XmlGenerator implements XmlGeneratorInterface
      */
     protected const URL_PLACEHOLDER_WITHOUT_STORE_NAME = '%s%s';
 
-    /**
-     * @param \Spryker\Zed\Sitemap\Dependency\Facade\SitemapToStoreFacadeInterface $storeFacade
-     */
     public function __construct(
         protected SitemapToStoreFacadeInterface $storeFacade
     ) {
@@ -152,9 +149,6 @@ class XmlGenerator implements XmlGeneratorInterface
         return $domDocument->saveXML() ?: '';
     }
 
-    /**
-     * @return \DOMDocument
-     */
     protected function createDomDocument(): DOMDocument
     {
         $domDocument = new DOMDocument('1.0', 'UTF-8');
@@ -164,11 +158,6 @@ class XmlGenerator implements XmlGeneratorInterface
         return $domDocument;
     }
 
-    /**
-     * @param \DOMDocument $domDocument
-     *
-     * @return \DOMElement
-     */
     protected function createSitemapindexElement(DOMDocument $domDocument): DOMElement
     {
         $sitemapindexElement = $domDocument->createElement(static::TAG_SITEMAPINDEX);
@@ -179,11 +168,6 @@ class XmlGenerator implements XmlGeneratorInterface
         return $sitemapindexElement;
     }
 
-    /**
-     * @param \DOMDocument $domDocument
-     *
-     * @return \DOMElement
-     */
     protected function createUrlsetElement(DOMDocument $domDocument): DOMElement
     {
         $urlsetElement = $domDocument->createElement(static::TAG_URLSET);
@@ -229,13 +213,6 @@ class XmlGenerator implements XmlGeneratorInterface
         return $urlElement;
     }
 
-    /**
-     * @param \DOMDocument $domDocument
-     * @param \Generated\Shared\Transfer\SitemapUrlTransfer $sitemapUrlTransfer
-     * @param string $yvesHost
-     *
-     * @return \DOMElement
-     */
     protected function createXhtmlLinkElement(
         DOMDocument $domDocument,
         SitemapUrlTransfer $sitemapUrlTransfer,
@@ -260,13 +237,6 @@ class XmlGenerator implements XmlGeneratorInterface
         return $xhtmlLinkElement;
     }
 
-    /**
-     * @param \DOMDocument $domDocument
-     * @param string $attributeName
-     * @param string $attributeValue
-     *
-     * @return \DOMAttr
-     */
     protected function createAttribute(DOMDocument $domDocument, string $attributeName, string $attributeValue): DOMAttr
     {
         $domAttribute = $domDocument->createAttribute($attributeName);
@@ -275,22 +245,11 @@ class XmlGenerator implements XmlGeneratorInterface
         return $domAttribute;
     }
 
-    /**
-     * @param string $languageCode
-     *
-     * @return string
-     */
     protected function convertLanguageCodeToHreflang(string $languageCode): string
     {
         return str_replace('_', '-', strtolower($languageCode));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SitemapUrlTransfer $sitemapUrlTransfer
-     * @param string $yvesHost
-     *
-     * @return string
-     */
     protected function getUrl(SitemapUrlTransfer $sitemapUrlTransfer, string $yvesHost): string
     {
         if ($this->storeFacade->isDynamicStoreEnabled() !== true) {

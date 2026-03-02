@@ -9,8 +9,5 @@ namespace Spryker\Zed\Sitemap\Business\Generator;
 
 interface SitemapGeneratorInterface
 {
-    /**
-     * @return void
-     */
     public function generateSitemapFiles(): void;
 }

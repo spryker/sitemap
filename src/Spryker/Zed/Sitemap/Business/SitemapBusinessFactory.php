@@ -21,9 +21,6 @@ use Spryker\Zed\Sitemap\SitemapDependencyProvider;
  */
 class SitemapBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\Sitemap\Business\Generator\XmlGeneratorInterface
-     */
     public function createXmlGenerator(): XmlGeneratorInterface
     {
         return new XmlGenerator(
@@ -31,9 +28,6 @@ class SitemapBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\Sitemap\Business\Generator\SitemapGeneratorInterface
-     */
     public function createSitemapGenerator(): SitemapGeneratorInterface
     {
         return new SitemapGenerator(
@@ -45,17 +39,11 @@ class SitemapBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\Sitemap\Dependency\Service\SitemapToFileSystemServiceInterface
-     */
     public function getFileSystemService(): SitemapToFileSystemServiceInterface
     {
         return $this->getProvidedDependency(SitemapDependencyProvider::SERVICE_FILE_SYSTEM);
     }
 
-    /**
-     * @return \Spryker\Zed\Sitemap\Dependency\Facade\SitemapToStoreFacadeInterface
-     */
     public function getStoreFacade(): SitemapToStoreFacadeInterface
     {
         return $this->getProvidedDependency(SitemapDependencyProvider::FACADE_STORE);

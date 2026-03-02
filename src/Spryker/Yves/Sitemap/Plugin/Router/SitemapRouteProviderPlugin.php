@@ -23,21 +23,11 @@ class SitemapRouteProviderPlugin extends AbstractRouteProviderPlugin
      */
     protected const SITEMAP_FILE_NAME_REGEXP = SitemapConstants::SITEMAP_FILE_NAME_PREFIX . '[\_a-zA-Z0-9]*\\.xml';
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     public function addRoutes(RouteCollection $routeCollection): RouteCollection
     {
         return $this->addSitemapViewRoute($routeCollection);
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addSitemapViewRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute(

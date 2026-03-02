@@ -14,22 +14,12 @@ use Spryker\Yves\Sitemap\SitemapConfig;
 
 class SitemapReader implements SitemapReaderInterface
 {
-    /**
-     * @param \Spryker\Yves\Sitemap\Dependency\Service\SitemapToFileSystemServiceInterface $fileSystemService
-     * @param \Spryker\Yves\Sitemap\SitemapConfig $config
-     */
     public function __construct(
         protected SitemapToFileSystemServiceInterface $fileSystemService,
         protected SitemapConfig $config
     ) {
     }
 
-    /**
-     * @param string $sitemapFileName
-     * @param string $storeName
-     *
-     * @return mixed
-     */
     public function readStream(string $sitemapFileName, string $storeName): mixed
     {
         $fileSystemStreamTransfer = (new FileSystemStreamTransfer())

@@ -22,17 +22,11 @@ class SitemapWidget extends AbstractWidget
         $this->addParameter(static::PARAM_SITEMAP_INDEX_FILE_NAME, SitemapConstants::SITEMAP_INDEX_FILE_NAME);
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'SitemapWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@Sitemap/views/sitemap/sitemap.twig';

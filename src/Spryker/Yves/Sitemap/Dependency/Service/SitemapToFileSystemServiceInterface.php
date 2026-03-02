@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\FileSystemStreamTransfer;
 
 interface SitemapToFileSystemServiceInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\FileSystemStreamTransfer $fileSystemStreamTransfer
-     *
-     * @return mixed
-     */
     public function readStream(FileSystemStreamTransfer $fileSystemStreamTransfer): mixed;
 
     /**

@@ -14,10 +14,6 @@ use Spryker\Yves\Sitemap\SitemapConfig;
 
 class SitemapWriter implements SitemapWriterInterface
 {
-    /**
-     * @param \Spryker\Yves\Sitemap\Dependency\Service\SitemapToFileSystemServiceInterface $fileSystemService
-     * @param \Spryker\Yves\Sitemap\SitemapConfig $config
-     */
     public function __construct(
         protected SitemapToFileSystemServiceInterface $fileSystemService,
         protected SitemapConfig $config

@@ -15,22 +15,12 @@ use Spryker\Yves\Sitemap\SitemapConfig;
 
 class SitemapCacheReader implements SitemapReaderInterface
 {
-    /**
-     * @param \Spryker\Yves\Sitemap\Dependency\Service\SitemapToFlysystemServiceInterface $flysystemService
-     * @param \Spryker\Yves\Sitemap\SitemapConfig $config
-     */
     public function __construct(
         protected SitemapToFlysystemServiceInterface $flysystemService,
         protected SitemapConfig $config
     ) {
     }
 
-    /**
-     * @param string $sitemapFileName
-     * @param string $storeName
-     *
-     * @return mixed
-     */
     public function readStream(string $sitemapFileName, string $storeName): mixed
     {
         $sitemapFilePath = $this->config->getFilePath($storeName, $sitemapFileName);
@@ -51,11 +41,6 @@ class SitemapCacheReader implements SitemapReaderInterface
         );
     }
 
-    /**
-     * @param int|null $fileTimestamp
-     *
-     * @return bool
-     */
     protected function isSitemapFileUpToDate(?int $fileTimestamp): bool
     {
         if ($fileTimestamp === null) {
