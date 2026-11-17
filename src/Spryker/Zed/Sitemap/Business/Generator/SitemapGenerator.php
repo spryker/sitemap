@@ -102,10 +102,12 @@ class SitemapGenerator implements SitemapGeneratorInterface
 
         foreach ($sitemapGeneratorDataProviderPlugin->getSitemapUrls($storeName, $generatorEntityLimit) as $sitemapUrlPaginatedTransfers) {
             $sitemapUrlTransfers = array_merge($sitemapUrlTransfers, $sitemapUrlPaginatedTransfers);
+            $sitemapUrlCount = count($sitemapUrlTransfers);
 
-            while (count($sitemapUrlTransfers) >= $chunkSize) {
+            while ($sitemapUrlCount >= $chunkSize) {
                 $sitemapUrlChunk = array_slice($sitemapUrlTransfers, 0, $chunkSize);
                 $sitemapUrlTransfers = array_slice($sitemapUrlTransfers, $chunkSize);
+                $sitemapUrlCount -= $chunkSize;
 
                 $fileNames[] = $this->writeSitemapChunk($entityType, $sitemapPageNumber++, $sitemapUrlChunk, $yvesHost, $storeName);
             }
